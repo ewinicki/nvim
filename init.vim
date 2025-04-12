@@ -1,14 +1,9 @@
-call plug#begin()
-Plug 'VundleVim/Vundle.vim'
-Plug 'iCyMind/NeoSolarized'
-Plug 'morhetz/gruvbox'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-eunuch'
-call plug#end()
-
 filetype on
 filetype plugin on
 filetype indent on
+
+" set spell for tex files
+autocmd FileType tex setlocal spell spelllang=en_us
 
 set autoread
 
@@ -27,8 +22,12 @@ set hlsearch
 
 "show matching braces
 set showmatch
+
 "blink rate for matching braces
 set mat=2
+
+"use system clipboared for all yank, delete, change, and put operations
+set clipboard=unnamedplus
 
 "disable bell
 set noerrorbells
@@ -36,6 +35,8 @@ set novisualbell
 set t_vb=
 set tm=500
 
+"disable mouse
+set mouse =
 
 "Navigate windows quick
 nnoremap <C-h> <C-w>h
@@ -88,6 +89,7 @@ set expandtab
 set smarttab
 set shiftwidth=3
 set tabstop=3
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 " Autoindent
 set si
